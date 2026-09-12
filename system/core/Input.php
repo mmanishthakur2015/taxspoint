@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+#[AllowDynamicProperties]
 class CI_Input {
 
 	public function post($index = NULL, $xss_clean = NULL) {
