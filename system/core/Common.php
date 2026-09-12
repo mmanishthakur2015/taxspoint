@@ -23,26 +23,49 @@ if ( ! function_exists('load_class')) {
 		$name = FALSE;
 
 		foreach (array(APPPATH, BASEPATH) as $path) {
-			if (file_exists($path.$directory.'/'.$class.'.php')) {
-				$name = 'CI_'.$class;
-				if (class_exists($name, FALSE) === FALSE) {
-					require_once($path.$directory.'/'.$class.'.php');
+			$possible_files = array(
+				$path.$directory.'/'.$class.'.php',
+				$path.$directory.'/'.ucfirst($class).'.php',
+				$path.$directory.'/'.strtolower($class).'.php',
+				$path.$directory.'/'.strtoupper($class).'.php',
+				$path.$directory.'/'.ucfirst(strtolower($class)).'.php'
+			);
+
+			foreach ($possible_files as $file) {
+				if (file_exists($file)) {
+					require_once($file);
+					$possible_names = array(
+						'CI_'.$class,
+						'CI_'.ucfirst($class),
+						'CI_'.strtoupper($class),
+						'CI_'.ucfirst(strtolower($class)),
+						$class,
+						ucfirst($class),
+						strtolower($class)
+					);
+					foreach ($possible_names as $pname) {
+						if (class_exists($pname, FALSE)) {
+							$name = $pname;
+							break 2;
+						}
+					}
 				}
-				break;
 			}
 		}
 
-		if ($name === FALSE) {
-			if (file_exists(APPPATH.$directory.'/'.$class.'.php')) {
-				$name = $class;
-				if (class_exists($name, FALSE) === FALSE) {
-					require_once(APPPATH.$directory.'/'.$class.'.php');
-				}
-			}
+		if ($name === FALSE || !class_exists($name, FALSE)) {
+			$_classes[$class] = new stdClass();
+			return $_classes[$class];
 		}
 
 		$_classes[$class] = isset($param) ? new $name($param) : new $name();
 		return $_classes[$class];
+	}
+}
+
+if ( ! function_exists('get_instance')) {
+	function &get_instance() {
+		return CI_Controller::get_instance();
 	}
 }
 
@@ -104,5 +127,13 @@ if ( ! function_exists('show_404')) {
 		header("HTTP/1.0 404 Not Found");
 		echo "<h1>404 Page Not Found</h1><p>The page you requested was not found.</p><p><a href='".base_url()."'>Return to TaxsPoint Home</a></p>";
 		exit(4);
+	}
+}
+
+if ( ! function_exists('show_error')) {
+	function show_error($message, $status_code = 500, $heading = 'An Error Was Encountered') {
+		header("HTTP/1.0 500 Internal Server Error");
+		echo "<h1>" . htmlspecialchars($heading) . "</h1><p>" . htmlspecialchars($message) . "</p>";
+		exit(1);
 	}
 }

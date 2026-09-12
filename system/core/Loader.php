@@ -20,7 +20,11 @@ class CI_Loader {
 		$_ci_path = VIEWPATH . $view . '.php';
 
 		if ( ! file_exists($_ci_path)) {
-			show_error('Unable to load the requested file: ' . $view . '.php');
+			if (file_exists(VIEWPATH . strtolower($view) . '.php')) {
+				$_ci_path = VIEWPATH . strtolower($view) . '.php';
+			} else {
+				show_error('Unable to load the requested file: ' . $view . '.php');
+			}
 		}
 
 		if ($return === TRUE) {
@@ -49,19 +53,51 @@ class CI_Loader {
 		}
 
 		$CI =& get_instance();
-		if (isset($CI->$name)) {
-			throw new RuntimeException('The model name you are loading is the name of a resource that is already being used: ' . $name);
+		if (isset($CI->$name) && is_object($CI->$name)) {
+			$this->_ci_models[] = $name;
+			return $this;
 		}
 
-		$model_path = APPPATH . 'models/' . $model . '.php';
+		$possible_paths = array(
+			APPPATH . 'models/' . $model . '.php',
+			APPPATH . 'models/' . ucfirst($model) . '.php',
+			APPPATH . 'models/' . strtolower($model) . '.php',
+			APPPATH . 'models/' . ucfirst(strtolower($model)) . '.php'
+		);
 
-		if ( ! file_exists($model_path)) {
+		$model_path = NULL;
+		foreach ($possible_paths as $p) {
+			if (file_exists($p)) {
+				$model_path = $p;
+				break;
+			}
+		}
+
+		if ($model_path === NULL) {
 			show_error('Unable to locate the model you have specified: ' . $model);
 		}
 
 		require_once($model_path);
 
-		$model_class = ucfirst(basename($model));
+		$possible_classes = array(
+			ucfirst(basename($model)),
+			ucfirst(strtolower(basename($model))),
+			basename($model),
+			strtolower(basename($model))
+		);
+
+		$model_class = NULL;
+		foreach ($possible_classes as $cls) {
+			if (class_exists($cls, FALSE)) {
+				$model_class = $cls;
+				break;
+			}
+		}
+
+		if ($model_class === NULL) {
+			show_error('Unable to find class for model: ' . $model);
+		}
+
 		$CI->$name = new $model_class();
 		$this->_ci_models[] = $name;
 
