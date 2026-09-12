@@ -49,5 +49,5 @@ Click the button below or open this link to deploy directly on Render:
 
 - **Headquarters:** DLF Cyber City, Tower B, 6th Floor, Sector 25, Gurugram, Haryana – 122002
 - **Branch Desk:** Barakhamba Road, Connaught Place, Central Delhi – 110001
-- **Emails:** `support@taxspoint.com` | `mmanishthakur2015@gmail.com`
-- **Phone:** `+91 84477 46183` / `+91 98102 39401`
+- **Emails:** `support@taxspoints.com`
+- **Phone:** `+91 72580 60485`

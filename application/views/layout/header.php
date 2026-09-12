@@ -119,13 +119,13 @@
         </div>
 
         <div class="flex items-center gap-4 text-[11px]">
-            <a href="tel:+918447746183" class="flex items-center gap-1.5 text-slate-200 hover:text-[#ff3f6c] transition font-semibold">
+            <a href="tel:+917258060485" class="flex items-center gap-1.5 text-slate-200 hover:text-[#ff3f6c] transition font-semibold">
                 <i data-lucide="phone" class="w-3.5 h-3.5 text-[#ff3f6c]"></i>
-                <span>+91 84477 46183</span>
+                <span>+91 72580 60485</span>
             </a>
             <div class="hidden md:flex items-center gap-1.5 text-slate-300">
                 <i data-lucide="mail" class="w-3.5 h-3.5 text-[#ff527b]"></i>
-                <span>mmanishthakur2015@gmail.com</span>
+                <a href="mailto:support@taxspoints.com" class="hover:text-white transition">support@taxspoints.com</a>
             </div>
             <div class="flex items-center gap-1 text-[#03a685] font-bold pl-2 border-l border-slate-600">
                 <span>★ 4.98/5</span>

@@ -49,11 +49,11 @@ export function Footer({ onNavigate, onSelectService, services, onOpenLeadModal 
             </div>
             <div className="flex items-center gap-3 text-slate-400">
               <Phone className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-              <a href="tel:+918447746183" className="hover:text-white transition">+91 84477 46183 (9 AM – 8 PM IST)</a>
+              <a href="tel:+917258060485" className="hover:text-white transition">+91 72580 60485 (9 AM – 8 PM IST)</a>
             </div>
             <div className="flex items-center gap-3 text-slate-400">
               <Mail className="w-4 h-4 text-amber-400 flex-shrink-0" />
-              <span>support@taxspoint.com / care@taxspoint.com</span>
+              <span>support@taxspoints.com</span>
             </div>
           </div>
 

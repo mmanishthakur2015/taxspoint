@@ -219,7 +219,7 @@ export function ClientPortal({ onOpenLeadModal }) {
                   </div>
                   <div className="pt-2 flex gap-2">
                     <a 
-                      href="tel:+918447746183" 
+                      href="tel:+917258060485" 
                       className="flex-1 py-2 rounded-xl bg-white border border-slate-200 hover:bg-slate-100 text-xs font-bold text-slate-700 text-center flex items-center justify-center gap-1"
                     >
                       <Phone className="w-3.5 h-3.5 text-emerald-600" /> Call CA

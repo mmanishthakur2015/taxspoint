@@ -42,15 +42,15 @@ export function Header({
 
           <div className="flex items-center gap-4 text-xs">
             <a 
-              href="tel:+918447746183" 
+              href="tel:+917258060485" 
               className="flex items-center gap-1.5 text-slate-200 hover:text-white transition font-medium"
             >
               <Phone className="w-3.5 h-3.5 text-brand-sky" />
-              <span>+91 84477 46183</span>
+              <span>+91 72580 60485</span>
             </a>
             <div className="hidden md:flex items-center gap-1.5 text-slate-200">
               <Mail className="w-3.5 h-3.5 text-brand-sky" />
-              <span>support@taxspoint.com</span>
+              <span>support@taxspoints.com</span>
             </div>
             <div className="flex items-center gap-1 text-amber-300 font-semibold pl-2 border-l border-white/20">
               <span>★ 4.9/5</span>

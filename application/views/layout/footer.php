@@ -41,17 +41,14 @@
 
                 <div class="flex items-center gap-3 text-slate-200 pt-1">
                     <i data-lucide="phone" class="w-4 h-4 text-[#ff3f6c] flex-shrink-0"></i>
-                    <a href="tel:+918447746183" class="hover:text-[#ff3f6c] transition font-bold">+91 84477 46183</a>
-                    <span class="text-slate-500">/</span>
-                    <a href="tel:+919810239401" class="hover:text-[#ff3f6c] transition">+91 98102 39401</a>
+                    <a href="tel:+917258060485" class="hover:text-[#ff3f6c] transition font-bold">+91 72580 60485</a>
+                    <span class="text-xs text-slate-400 font-normal">(Mon - Sat: 9 AM - 8 PM IST)</span>
                 </div>
 
                 <div class="flex items-center gap-3 text-slate-200">
                     <i data-lucide="mail" class="w-4 h-4 text-[#ff527b] flex-shrink-0"></i>
                     <div>
-                        <a href="mailto:support@taxspoint.com" class="hover:text-white transition font-medium">support@taxspoint.com</a>
-                        <span class="text-slate-500 mx-1">|</span>
-                        <a href="mailto:mmanishthakur2015@gmail.com" class="hover:text-[#ff3f6c] transition font-medium">mmanishthakur2015@gmail.com</a>
+                        <a href="mailto:support@taxspoints.com" class="hover:text-[#ff3f6c] transition font-medium">support@taxspoints.com</a>
                     </div>
                 </div>
             </div>
