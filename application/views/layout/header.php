@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo isset($title) ? $title : 'TaxsPoint | Next-Gen AI Legal & Tax Advisory Platform'; ?></title>
     <meta name="description" content="TaxsPoint — India's premier AI-enabled legal & tax tech ecosystem. 100% online company registration, ITR e-filing, GST returns, and trademark protection.">
-    <link rel="icon" type="image/png" href="<?php echo base_url('assets/images/taxspoint-logo.png'); ?>">
+    <link rel="icon" type="image/png" href="<?php echo base_url('assets/images/favicon.png'); ?>">
 
     <!-- Google Fonts: Space Grotesk & Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -140,8 +140,8 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-20">
             <!-- Brand Logo -->
-            <a href="<?php echo site_url(); ?>" class="flex items-center gap-3 group">
-                <img src="<?php echo base_url('assets/images/taxspoint-logo.png'); ?>" alt="TaxsPoint Logo" class="h-12 md:h-14 w-auto object-contain transition-transform group-hover:scale-105">
+            <a href="<?php echo site_url(); ?>" class="flex items-center gap-3 group py-1">
+                <img src="<?php echo base_url('assets/images/taxspoint-logo.png'); ?>" alt="TaxsPoint Logo" class="h-10 sm:h-11 md:h-12 w-auto object-contain transition-transform group-hover:scale-105">
             </a>
 
             <!-- Navigation Links -->

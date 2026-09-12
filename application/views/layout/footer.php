@@ -7,8 +7,8 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 pb-12 border-b border-[#353a4e]">
             <!-- Brand Column -->
             <div class="lg:col-span-4 space-y-4">
-                <div class="bg-white p-2.5 rounded-2xl w-fit">
-                    <img src="<?php echo base_url('assets/images/taxspoint-logo.png'); ?>" alt="TaxsPoint Logo" class="h-10 w-auto object-contain">
+                <div class="bg-white px-3.5 py-2 rounded-2xl w-fit shadow-md">
+                    <img src="<?php echo base_url('assets/images/taxspoint-logo.png'); ?>" alt="TaxsPoint Logo" class="h-9 md:h-10 w-auto object-contain">
                 </div>
                 <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
                     TaxsPoint is India's leading AI-enabled corporate legal and chartered accountancy ecosystem, providing transparent, fast-track company formation, ITR filing, GST compliance, and trademark protection.

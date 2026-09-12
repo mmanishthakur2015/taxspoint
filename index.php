@@ -4,16 +4,20 @@
  * Powered by CodeIgniter
  */
 
+@ini_set('display_errors', '0');
+@ini_set('display_startup_errors', '0');
+error_reporting(0);
+
 define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'production');
 
 switch (ENVIRONMENT) {
 	case 'development':
+		@ini_set('display_errors', '0');
 		error_reporting(E_ALL & ~E_DEPRECATED & ~E_NOTICE & ~E_USER_DEPRECATED);
-		ini_set('display_errors', 0);
 	break;
 	case 'testing':
 	case 'production':
-		ini_set('display_errors', 0);
+		@ini_set('display_errors', '0');
 		error_reporting(0);
 	break;
 	default:

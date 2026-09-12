@@ -108,4 +108,13 @@ class CI_Loader {
 	public function helper($helpers = array()) {
 		return $this;
 	}
+
+	public function __get($key) {
+		$CI =& get_instance();
+		return isset($CI->$key) ? $CI->$key : NULL;
+	}
+
+	public function __set($key, $val) {
+		$this->$key = $val;
+	}
 }
