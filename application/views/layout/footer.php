@@ -26,16 +26,8 @@
                 <div class="flex items-start gap-3 text-slate-200">
                     <i data-lucide="map-pin" class="w-4 h-4 text-[#ff3f6c] flex-shrink-0 mt-1"></i>
                     <div>
-                        <strong class="text-white">Headquarters:</strong><br>
-                        DLF Cyber City, Tower B, 6th Floor, Sector 25, Gurugram, Haryana – 122002
-                    </div>
-                </div>
-
-                <div class="flex items-start gap-3 text-slate-300">
-                    <i data-lucide="building" class="w-4 h-4 text-[#ff527b] flex-shrink-0 mt-1"></i>
-                    <div>
-                        <strong class="text-white">Branch Office:</strong><br>
-                        Barakhamba Road, Connaught Place, Central Delhi – 110001
+                        <strong class="text-white">Registered Corporate Office:</strong><br>
+                        101 Nirala colony, Digha, Patna, Bihar – 800011
                     </div>
                 </div>
 

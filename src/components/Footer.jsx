@@ -42,10 +42,10 @@ export function Footer({ onNavigate, onSelectService, services, onOpenLeadModal 
 
           {/* Quick Contact & Working Hours */}
           <div className="lg:col-span-4 space-y-3 text-xs sm:text-sm">
-            <h4 className="text-white font-bold text-base mb-3">Headquarters & Support</h4>
+            <h4 className="text-white font-bold text-base mb-3">Registered Office & Support</h4>
             <div className="flex items-start gap-3 text-slate-400">
               <MapPin className="w-4 h-4 text-brand-sky flex-shrink-0 mt-1" />
-              <span>Level 5, Tower B, Cyber City, DLF Phase 2, Gurugram, Haryana – 122002</span>
+              <span>101 Nirala colony, Digha, Patna, Bihar – 800011</span>
             </div>
             <div className="flex items-center gap-3 text-slate-400">
               <Phone className="w-4 h-4 text-emerald-400 flex-shrink-0" />
