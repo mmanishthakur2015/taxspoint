@@ -235,12 +235,20 @@
     function handleLeadSubmit(e) {
         e.preventDefault();
         var form = e.target;
+        var isHero = form.id === 'hero-lead-form';
+        var submitBtn = form.querySelector('button[type="submit"]');
+        var origBtnText = submitBtn ? submitBtn.innerHTML : '';
+        if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span>Processing Request...</span>';
+        }
+
         var data = {
             name: form.name.value,
             phone: form.phone.value,
-            email: form.email.value,
-            city: form.city.value,
-            service: form.service.value
+            email: form.email ? form.email.value : '',
+            city: form.city ? form.city.value : 'India',
+            service: form.service ? form.service.value : 'General Consultation'
         };
 
         fetch('<?php echo site_url("api/create_lead"); ?>', {
@@ -248,13 +256,45 @@
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
         }).then(function(r) { return r.json(); }).then(function(res) {
-            confetti({ particleCount: 80, spread: 60, origin: { y: 0.6 } });
+            if (typeof confetti === 'function') {
+                confetti({ particleCount: 90, spread: 70, origin: { y: 0.6 } });
+            }
             form.classList.add('hidden');
-            document.getElementById('lead-success-msg').classList.remove('hidden');
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = origBtnText;
+            }
+            if (isHero) {
+                var heroSuccess = document.getElementById('hero-lead-success');
+                var refEl = document.getElementById('hero-lead-ref');
+                if (res && res.lead && res.lead.id && refEl) {
+                    refEl.innerText = res.lead.id;
+                }
+                if (heroSuccess) {
+                    heroSuccess.classList.remove('hidden');
+                }
+            } else {
+                var modalSuccess = document.getElementById('lead-success-msg');
+                if (modalSuccess) {
+                    modalSuccess.classList.remove('hidden');
+                }
+            }
         }).catch(function() {
-            confetti({ particleCount: 80, spread: 60, origin: { y: 0.6 } });
+            if (typeof confetti === 'function') {
+                confetti({ particleCount: 70, spread: 60, origin: { y: 0.6 } });
+            }
             form.classList.add('hidden');
-            document.getElementById('lead-success-msg').classList.remove('hidden');
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = origBtnText;
+            }
+            if (isHero) {
+                var heroSuccess = document.getElementById('hero-lead-success');
+                if (heroSuccess) heroSuccess.classList.remove('hidden');
+            } else {
+                var modalSuccess = document.getElementById('lead-success-msg');
+                if (modalSuccess) modalSuccess.classList.remove('hidden');
+            }
         });
     }
 </script>

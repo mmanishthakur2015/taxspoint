@@ -27,7 +27,7 @@
                         Get an instant statutory quote, complete document checklist, and a free 1-on-1 call with a senior Chartered Accountant.
                     </p>
 
-                    <form onsubmit="handleLeadSubmit(event)" class="space-y-4">
+                    <form id="hero-lead-form" onsubmit="handleLeadSubmit(event)" class="space-y-4">
                         <div>
                             <label class="block text-xs font-bold text-[#282c3f] mb-1">Full Legal Name *</label>
                             <input type="text" name="name" required placeholder="As per PAN Card" class="w-full h-11 px-3.5 rounded-xl border border-slate-300 bg-slate-50/50 text-sm focus:bg-white focus:border-[#ff3f6c] focus:ring-1 focus:ring-[#ff3f6c]/30 outline-none transition">
@@ -73,6 +73,24 @@
                             <span>256-Bit Encrypted Vault • Zero Spam Guarantee</span>
                         </div>
                     </form>
+
+                    <!-- In-card Success State -->
+                    <div id="hero-lead-success" class="hidden py-8 text-center space-y-3 bg-[#e8fbf6] rounded-2xl border border-[#c3f2e6] p-6 animate-in fade-in">
+                        <div class="w-14 h-14 rounded-full bg-[#03a685] text-white flex items-center justify-center mx-auto shadow-lg shadow-[#03a685]/30">
+                            <i data-lucide="check-check" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-black text-[#282c3f]">Consultation Scheduled!</h3>
+                        <p class="text-xs sm:text-sm text-[#535766] max-w-sm mx-auto leading-relaxed">
+                            Your dedicated Senior CA has been assigned. You will receive an instant WhatsApp confirmation & priority callback within 15 minutes.
+                        </p>
+                        <div class="p-3 bg-white rounded-xl border border-slate-200 text-xs font-semibold text-[#282c3f] flex items-center justify-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-[#03a685] animate-ping"></span>
+                            Reference ID: <span id="hero-lead-ref" class="font-mono text-[#ff3f6c] font-bold">TP-LEAD-OK</span>
+                        </div>
+                        <button type="button" onclick="resetHeroForm()" class="mt-2 text-xs font-bold text-[#ff3f6c] hover:underline">
+                            Submit another inquiry →
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -348,5 +366,15 @@
         document.getElementById('hero-display-price').innerText = opt.getAttribute('data-price');
         document.getElementById('hero-original-price').innerText = '₹' + opt.getAttribute('data-original');
         document.getElementById('hero-service-link').setAttribute('href', opt.getAttribute('data-url'));
+    }
+
+    function resetHeroForm() {
+        var form = document.getElementById('hero-lead-form');
+        var success = document.getElementById('hero-lead-success');
+        if (form && success) {
+            form.reset();
+            form.classList.remove('hidden');
+            success.classList.add('hidden');
+        }
     }
 </script>
