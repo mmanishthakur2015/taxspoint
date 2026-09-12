@@ -2,14 +2,14 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="text-center max-w-3xl mx-auto mb-10 space-y-3">
-            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-100 text-amber-900 font-bold text-xs uppercase tracking-wider">
-                <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-600"></i>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#fff1f4] text-[#ff3f6c] font-bold text-xs uppercase tracking-wider border border-[#ffe4e8]">
+                <i data-lucide="sparkles" class="w-3.5 h-3.5 text-[#ff3f6c]"></i>
                 <span>100% Free Tools</span>
             </span>
-            <h1 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+            <h1 class="text-3xl sm:text-4xl font-black text-[#282c3f] tracking-tight">
                 Income Tax & GST Calculators
             </h1>
-            <p class="text-sm sm:text-base text-slate-600">
+            <p class="text-sm sm:text-base text-[#535766]">
                 Compare Old vs New Tax Regime for FY 2024-25, compute GST liabilities, and verify MCA name clearance.
             </p>
         </div>
@@ -17,13 +17,13 @@
         <!-- Switcher Buttons -->
         <div class="flex justify-center mb-8">
             <div class="inline-flex p-1.5 rounded-2xl bg-slate-100 border border-slate-200 max-w-md w-full">
-                <button onclick="switchCalc('tax')" id="btn-calc-tax" class="flex-1 py-2.5 px-3 rounded-xl text-xs sm:text-sm font-bold bg-white text-brand-blue shadow transition">
+                <button onclick="switchCalc('tax')" id="btn-calc-tax" class="flex-1 py-2.5 px-3 rounded-xl text-xs sm:text-sm font-bold bg-white text-[#ff3f6c] shadow transition">
                     Income Tax (Old vs New)
                 </button>
-                <button onclick="switchCalc('gst')" id="btn-calc-gst" class="flex-1 py-2.5 px-3 rounded-xl text-xs sm:text-sm font-bold text-slate-600 hover:text-slate-900 transition">
+                <button onclick="switchCalc('gst')" id="btn-calc-gst" class="flex-1 py-2.5 px-3 rounded-xl text-xs sm:text-sm font-bold text-[#535766] hover:text-[#ff3f6c] transition">
                     GST Calculator
                 </button>
-                <button onclick="switchCalc('mca')" id="btn-calc-mca" class="flex-1 py-2.5 px-3 rounded-xl text-xs sm:text-sm font-bold text-slate-600 hover:text-slate-900 transition">
+                <button onclick="switchCalc('mca')" id="btn-calc-mca" class="flex-1 py-2.5 px-3 rounded-xl text-xs sm:text-sm font-bold text-[#535766] hover:text-[#ff3f6c] transition">
                     MCA Name Checker
                 </button>
             </div>
@@ -74,41 +74,41 @@
 
                 <!-- Comparison Output -->
                 <div class="lg:col-span-6 space-y-4">
-                    <div class="p-4 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-700 text-white shadow-md">
+                    <div class="p-4 rounded-2xl btn-myntra-gradient text-white shadow-md">
                         <div class="text-xs uppercase tracking-wider font-semibold opacity-90">Recommended Choice</div>
                         <div id="tax-recommendation-title" class="text-xl font-extrabold mt-0.5">New Tax Regime</div>
-                        <div id="tax-recommendation-desc" class="text-xs text-emerald-100 mt-1">
+                        <div id="tax-recommendation-desc" class="text-xs text-pink-100 mt-1">
                             You save significantly under the New Regime!
                         </div>
                     </div>
 
                     <div class="grid grid-cols-2 gap-3">
                         <!-- New Regime -->
-                        <div class="p-4 rounded-2xl bg-white border border-emerald-500 ring-2 ring-emerald-500/20 shadow-md">
-                            <div class="text-xs font-bold text-brand-blue mb-2">New Regime (Default)</div>
-                            <div class="space-y-1.5 text-xs text-slate-600">
-                                <div class="flex justify-between"><span>Std Deduction:</span><strong>₹75,000</strong></div>
+                        <div class="p-4 rounded-2xl bg-white border border-[#ff3f6c] ring-2 ring-[#ff3f6c]/20 shadow-md">
+                            <div class="text-xs font-bold text-[#ff3f6c] mb-2">New Regime (Default)</div>
+                            <div class="space-y-1.5 text-xs text-[#535766]">
+                                <div class="flex justify-between"><span>Std Deduction:</span><strong class="text-[#282c3f]">₹75,000</strong></div>
                                 <div class="flex justify-between"><span>Other Ded:</span><span class="text-slate-400">Nil</span></div>
-                                <div class="flex justify-between pt-2 border-t border-slate-100 font-bold text-slate-900">
-                                    <span>Total Tax:</span><span id="tax-new-total" class="text-base text-brand-blue">₹0</span>
+                                <div class="flex justify-between pt-2 border-t border-slate-100 font-bold text-[#282c3f]">
+                                    <span>Total Tax:</span><span id="tax-new-total" class="text-base text-[#ff3f6c]">₹0</span>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Old Regime -->
                         <div class="p-4 rounded-2xl bg-white/80 border border-slate-200">
-                            <div class="text-xs font-bold text-slate-700 mb-2">Old Regime</div>
-                            <div class="space-y-1.5 text-xs text-slate-600">
-                                <div class="flex justify-between"><span>Std Deduction:</span><strong>₹50,000</strong></div>
+                            <div class="text-xs font-bold text-[#282c3f] mb-2">Old Regime</div>
+                            <div class="space-y-1.5 text-xs text-[#535766]">
+                                <div class="flex justify-between"><span>Std Deduction:</span><strong class="text-[#282c3f]">₹50,000</strong></div>
                                 <div class="flex justify-between"><span>Total Ded:</span><span id="tax-old-ded">₹0</span></div>
-                                <div class="flex justify-between pt-2 border-t border-slate-100 font-bold text-slate-900">
-                                    <span>Total Tax:</span><span id="tax-old-total" class="text-base text-slate-900">₹0</span>
+                                <div class="flex justify-between pt-2 border-t border-slate-100 font-bold text-[#282c3f]">
+                                    <span>Total Tax:</span><span id="tax-old-total" class="text-base text-[#282c3f]">₹0</span>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <button onclick="openLeadModal('File ITR with Senior CA')" class="w-full py-3 rounded-xl bg-brand-navy hover:bg-brand-blue text-white font-bold text-xs transition">
+                    <button onclick="openLeadModal('File ITR with Senior CA')" class="w-full py-3.5 rounded-xl btn-myntra-gradient hover:opacity-95 text-white font-bold text-xs shadow-md shadow-[#ff3f6c]/25 transition">
                         File ITR for ₹799 with Dedicated CA Support →
                     </button>
                 </div>
@@ -192,19 +192,19 @@
         document.getElementById('calc-gst-section').classList.add('hidden');
         document.getElementById('calc-mca-section').classList.add('hidden');
 
-        document.getElementById('btn-calc-tax').className = 'flex-1 py-2.5 px-3 rounded-xl text-xs sm:text-sm font-bold text-slate-600 hover:text-slate-900 transition';
-        document.getElementById('btn-calc-gst').className = 'flex-1 py-2.5 px-3 rounded-xl text-xs sm:text-sm font-bold text-slate-600 hover:text-slate-900 transition';
-        document.getElementById('btn-calc-mca').className = 'flex-1 py-2.5 px-3 rounded-xl text-xs sm:text-sm font-bold text-slate-600 hover:text-slate-900 transition';
+        document.getElementById('btn-calc-tax').className = 'flex-1 py-2.5 px-3 rounded-xl text-xs sm:text-sm font-bold text-[#535766] hover:text-[#ff3f6c] transition';
+        document.getElementById('btn-calc-gst').className = 'flex-1 py-2.5 px-3 rounded-xl text-xs sm:text-sm font-bold text-[#535766] hover:text-[#ff3f6c] transition';
+        document.getElementById('btn-calc-mca').className = 'flex-1 py-2.5 px-3 rounded-xl text-xs sm:text-sm font-bold text-[#535766] hover:text-[#ff3f6c] transition';
 
         document.getElementById('calc-' + type + '-section').classList.remove('hidden');
-        document.getElementById('btn-calc-' + type).className = 'flex-1 py-2.5 px-3 rounded-xl text-xs sm:text-sm font-bold bg-white text-brand-blue shadow transition';
+        document.getElementById('btn-calc-' + type).className = 'flex-1 py-2.5 px-3 rounded-xl text-xs sm:text-sm font-bold bg-white text-[#ff3f6c] shadow transition';
     }
 
     function runTaxCalc() {
         var income = Math.max(0, Number(document.getElementById('tax-income').value) || 0);
         var ded80c = Math.min(150000, Number(document.getElementById('tax-80c').value) || 0);
         var ded80d = Math.min(100000, Number(document.getElementById('tax-80d').value) || 0);
-        var hra = Number(document.getElementById('tax-hra').value) || 0);
+        var hra = Number(document.getElementById('tax-hra').value) || 0;
         var home = Math.min(200000, Number(document.getElementById('tax-homeloan').value) || 0);
 
         // New Regime
@@ -252,7 +252,7 @@
         document.querySelectorAll('.gst-rate-btn').forEach(function(b) {
             b.className = 'gst-rate-btn py-2 rounded-xl text-xs font-bold border border-slate-200 bg-white text-slate-700';
             if (Number(b.getAttribute('data-rate')) === rate) {
-                b.className = 'gst-rate-btn py-2 rounded-xl text-xs font-bold border bg-slate-900 text-white';
+                b.className = 'gst-rate-btn py-2 rounded-xl text-xs font-bold border bg-[#ff3f6c] text-white shadow-sm';
             }
         });
         runGstCalc();

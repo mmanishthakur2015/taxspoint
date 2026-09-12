@@ -2,14 +2,14 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="text-center max-w-3xl mx-auto mb-10 space-y-3">
-            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 text-emerald-900 font-bold text-xs uppercase tracking-wider">
-                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-600"></i>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#fff1f4] text-[#ff3f6c] font-bold text-xs uppercase tracking-wider border border-[#ffe4e8]">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-[#ff3f6c]"></i>
                 <span>Real-Time Government Tracking</span>
             </span>
-            <h1 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+            <h1 class="text-3xl sm:text-4xl font-black text-[#282c3f] tracking-tight">
                 Application Tracking & Document Vault
             </h1>
-            <p class="text-sm sm:text-base text-slate-600">
+            <p class="text-sm sm:text-base text-[#535766]">
                 Track your MCA SPICe+, GST, or Trademark filing stage in real time and download verified certificates.
             </p>
         </div>
@@ -17,16 +17,16 @@
         <!-- Order Search Bar -->
         <div class="max-w-xl mx-auto mb-10">
             <form action="<?php echo site_url('track'); ?>" method="GET" class="flex gap-2 p-1.5 bg-white rounded-2xl shadow-md border border-slate-200">
-                <input type="text" name="order_id" required placeholder="Enter Order ID (e.g. TP-92841, TP-84192)..." value="<?php echo isset($order['order_id']) ? $order['order_id'] : ''; ?>" class="flex-1 px-4 py-2 text-sm outline-none font-medium text-slate-800">
-                <button type="submit" class="px-5 py-2.5 rounded-xl bg-brand-navy hover:bg-brand-blue text-white font-bold text-xs transition">
+                <input type="text" name="order_id" required placeholder="Enter Order ID (e.g. TP-92841, TP-84192)..." value="<?php echo isset($order['order_id']) ? $order['order_id'] : ''; ?>" class="flex-1 px-4 py-2 text-sm outline-none font-medium text-[#282c3f]">
+                <button type="submit" class="px-5 py-2.5 rounded-xl bg-[#ff3f6c] hover:bg-[#e7335d] text-white font-bold text-xs transition shadow-md shadow-[#ff3f6c]/25">
                     Track Filing
                 </button>
             </form>
 
-            <div class="flex items-center justify-center gap-2 mt-3 text-xs text-slate-500">
+            <div class="flex items-center justify-center gap-2 mt-3 text-xs text-[#535766]">
                 <span>Quick Select:</span>
                 <?php foreach ($all_orders as $o): ?>
-                    <a href="<?php echo site_url('track?order_id=' . $o['order_id']); ?>" class="px-2 py-0.5 rounded border border-slate-200 bg-white hover:bg-slate-100 font-semibold text-slate-700">
+                    <a href="<?php echo site_url('track?order_id=' . $o['order_id']); ?>" class="px-2 py-0.5 rounded border border-slate-200 bg-white hover:bg-[#fff1f4] hover:text-[#ff3f6c] hover:border-[#ff3f6c]/40 font-semibold text-[#282c3f] transition">
                         <?php echo $o['order_id']; ?>
                     </a>
                 <?php endforeach; ?>
@@ -38,10 +38,10 @@
             <div class="bg-white rounded-3xl border border-slate-200 shadow-xl overflow-hidden max-w-5xl mx-auto">
                 
                 <!-- Top Status Strip -->
-                <div class="bg-gradient-to-r from-brand-dark via-brand-navy to-brand-blue p-6 text-white flex flex-wrap items-center justify-between gap-4">
+                <div class="bg-gradient-to-r from-[#282c3f] via-[#353a4e] to-[#282c3f] p-6 text-white flex flex-wrap items-center justify-between gap-4 border-b border-[#ff3f6c]/30">
                     <div>
                         <div class="flex items-center gap-2">
-                            <span class="text-xs font-bold uppercase bg-white/10 px-2.5 py-0.5 rounded-full text-blue-200">
+                            <span class="text-xs font-bold uppercase bg-[#fff1f4]/15 text-[#ff527b] px-2.5 py-0.5 rounded-full border border-[#ff527b]/30">
                                 Order ID: <?php echo $order['order_id']; ?>
                             </span>
                             <span class="text-xs text-slate-300">Applied on <?php echo $order['date']; ?></span>
@@ -53,11 +53,11 @@
                     </div>
 
                     <div class="text-right">
-                        <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold <?php echo ($order['current_stage'] == 4) ? 'bg-emerald-500 text-white' : 'bg-amber-400 text-slate-950'; ?>">
+                        <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold <?php echo ($order['current_stage'] == 4) ? 'bg-[#03a685] text-white' : 'bg-[#ff905a] text-slate-950'; ?>">
                             <i data-lucide="clock" class="w-3.5 h-3.5"></i>
                             <span><?php echo $order['status']; ?></span>
                         </span>
-                        <div class="text-xs text-blue-200 mt-1">Paid: ₹<?php echo number_format($order['amount']); ?></div>
+                        <div class="text-xs text-[#ff527b] mt-1 font-bold">Paid: ₹<?php echo number_format($order['amount']); ?></div>
                     </div>
                 </div>
 
@@ -74,7 +74,7 @@
                         );
                     ?>
                     <div>
-                        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-6">
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-[#535766] mb-6">
                             Live Government Filing Stage
                         </h4>
                         <div class="grid grid-cols-1 sm:grid-cols-5 gap-4">
@@ -83,10 +83,10 @@
                                 $isCurrent = ($idx == $order['current_stage']);
                             ?>
                                 <div class="flex sm:flex-col items-center sm:text-center gap-3">
-                                    <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-xs flex-shrink-0 <?php echo $isPast ? 'bg-emerald-600 text-white' : ($isCurrent ? 'bg-brand-blue text-white ring-4 ring-blue-100 shadow-md' : 'bg-slate-100 text-slate-400'); ?>">
+                                    <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-xs flex-shrink-0 <?php echo $isPast ? 'bg-[#03a685] text-white' : ($isCurrent ? 'bg-[#ff3f6c] text-white ring-4 ring-[#ff3f6c]/20 shadow-md shadow-[#ff3f6c]/25' : 'bg-slate-100 text-[#535766]'); ?>">
                                         <?php echo $isPast ? '✓' : ($idx + 1); ?>
                                     </div>
-                                    <div class="text-xs font-bold <?php echo $isCurrent ? 'text-brand-blue' : ($isPast ? 'text-slate-900' : 'text-slate-400'); ?>">
+                                    <div class="text-xs font-bold <?php echo $isCurrent ? 'text-[#ff3f6c]' : ($isPast ? 'text-[#282c3f]' : 'text-[#535766]'); ?>">
                                         <?php echo $st; ?>
                                     </div>
                                 </div>
@@ -96,20 +96,20 @@
 
                     <!-- Assigned CA & Notes -->
                     <div class="grid grid-cols-1 md:grid-cols-12 gap-6 pt-4 border-t border-slate-100">
-                        <div class="md:col-span-7 bg-blue-50/60 rounded-2xl p-5 border border-blue-100 space-y-2">
-                            <div class="text-xs font-bold uppercase tracking-wider text-brand-blue">
+                        <div class="md:col-span-7 bg-[#fff1f4]/60 rounded-2xl p-5 border border-[#ffe4e8] space-y-2">
+                            <div class="text-xs font-bold uppercase tracking-wider text-[#ff3f6c]">
                                 Latest Operations Update
                             </div>
-                            <p class="text-sm font-semibold text-slate-800"><?php echo $order['notes']; ?></p>
-                            <p class="text-xs text-slate-500">Certificate approval expected within 48 to 72 business hours.</p>
+                            <p class="text-sm font-semibold text-[#282c3f]"><?php echo $order['notes']; ?></p>
+                            <p class="text-xs text-[#535766]">Certificate approval expected within 48 to 72 business hours.</p>
                         </div>
 
                         <div class="md:col-span-5 bg-slate-50 rounded-2xl p-5 border border-slate-200 space-y-2">
-                            <div class="text-xs font-bold uppercase tracking-wider text-slate-400">Assigned Professional</div>
-                            <div class="font-bold text-slate-900"><?php echo $order['assigned_ca']; ?></div>
-                            <div class="text-xs text-slate-500">Senior Compliance Officer</div>
+                            <div class="text-xs font-bold uppercase tracking-wider text-[#535766]">Assigned Professional</div>
+                            <div class="font-bold text-[#282c3f]"><?php echo $order['assigned_ca']; ?></div>
+                            <div class="text-xs text-[#535766]">Senior Compliance Officer</div>
                             <div class="pt-2">
-                                <a href="tel:+918447746183" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-emerald-600 text-white font-bold text-xs">
+                                <a href="tel:+918447746183" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#03a685] text-white font-bold text-xs shadow-sm">
                                     <i data-lucide="phone" class="w-3.5 h-3.5"></i>
                                     <span>Call Senior CA</span>
                                 </a>
